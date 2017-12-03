@@ -1,0 +1,15 @@
+.middle-container {
+    text-align: center;
+}
+
+.button-account-dropdown {
+    background-color: transparent;
+    color: deepskyblue;
+    border: 0px;
+    cursor: pointer;
+}
+
+a:not([href]):not([tabindex]) {
+    color: deepskyblue;
+    cursor: pointer;
+}

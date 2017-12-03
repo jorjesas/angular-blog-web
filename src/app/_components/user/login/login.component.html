@@ -1,0 +1,16 @@
+<form #f="ngForm" (ngSubmit)="onLogin()">
+  <div *ngIf="message.type=='error'" class="alert alert-danger" role="alert">
+    {{message.msg}}
+  </div>
+  
+  <div class="form-group">
+    <label for="username">Username</label>
+    <input [(ngModel)]="user.username" name="username" type="text" class="form-control" id="username" placeholder="Username" required>
+  </div>
+  <div class="form-group">
+    <label for="password">Password</label>
+    <input [(ngModel)]="user.password" name="password" type="password" class="form-control" id="password" placeholder="Password" required>
+  </div>
+
+  <button type="submit" class="btn btn-primary">Login</button>
+</form>

@@ -1,0 +1,23 @@
+.post-edit-dropdown {
+    background-color: transparent;
+    color: deepskyblue;
+    border: 0px;
+    cursor: pointer;
+}
+
+.comment-form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.comments-container {
+    margin-left: 20%;
+    margin-right: 20%;
+}
+
+.comments-container li {
+    list-style-type: none;
+    border: 1px solid deepskyblue;
+    margin-bottom: 20px;
+}

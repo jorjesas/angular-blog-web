@@ -1,0 +1,9 @@
+<div *ngIf="isPostCreatedByLoggedUser()" class="dropdown">
+    <button class="post-edit-dropdown dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      Admin post
+    </button>
+    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+      <a class="dropdown-item" routerLink="/blog/{{post.id}}/edit">Edit post</a>
+      <a class="dropdown-item" (click)="onDelete()">Delete post</a>
+    </div>
+</div>

@@ -1,0 +1,14 @@
+<ul class="nav nav-tabs">
+    <li class="nav-item active"><a class="nav-link" routerLink="/user/my-account">My account</a></li>
+</ul>
+  
+<div class="my-account-container" *ngIf="this.user">
+  <h3>Welcome: {{user.username}}</h3>
+  <div>
+    <ul>
+      <li>First Name: {{user.firstName}}</li>
+      <li>Last Name: {{user.lastName}}</li>
+      <li>email: {{user.email}}</li>
+    </ul>
+  </div>
+</div>

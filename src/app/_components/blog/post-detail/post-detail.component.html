@@ -1,0 +1,26 @@
+<article class="post-detail">
+  <h2>{{post.title}}</h2>
+
+  <app-post-admin [post]="post"></app-post-admin>
+  <hr>
+
+  <div class="post-content">{{post.body}}</div>
+  <hr>
+
+  <div>
+      <h4>Write your comment:</h4>
+      <app-comment-form class="comment-form" (newComment)="onNewComment($event)" [postId]="postId"></app-comment-form>
+  </div>
+
+  <hr>
+  <div id="comments" class="comments-container">
+      <h4>Comments:</h4>
+      <ul>
+        <li *ngFor="let comment of comments">
+          <b>{{comment.name}} says: {{comment.title}}</b>
+          <hr>
+          <div class="comment-body">{{comment.body}}</div>
+        </li>
+      </ul>
+  </div>
+</article>

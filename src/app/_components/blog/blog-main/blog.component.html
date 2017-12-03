@@ -1,0 +1,101 @@
+<div class="blog-title">
+    <h2>{{title}}</h2>
+</div>
+
+<main class="page-main">
+    <aside class="page-left-side">
+
+      <div class="">
+        <form class="form-inline article-search-form">
+            <input #searchTextBox (keyup)="onKeyup(searchTextBox.value)" class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+        </form>
+      </div>
+      <hr>
+
+      <div class="about-side">
+        <h4>About</h4>
+        <p>Hello! I'm Angie2 blog app developed for individual training purposes.</p>
+      </div>
+
+      <div class="article-categories-side">
+        <h4>Categories</h4>
+        <fieldset class="category-list">
+        </fieldset>
+        <div class="rb-container">
+            <input id="rb-category-all" [value]='0' type="radio" name="rb-categories" checked (click)="onCategoryChanged(null)">
+            <label for="rb-category-all"><span></span>all</label>
+        </div>
+        <div class="rb-container" *ngFor="let cat of categories">
+            <input id="rb-category-{{cat.title}}" [value]='cat.id' type="radio" name="rb-categories" (click)="onCategoryChanged(cat)">
+            <label for="rb-category-{{cat.title}}"><span></span>{{cat.title}}</label>
+        </div>
+      </div>
+
+      <div class="article-recent-side">
+        <h4>Recent posts</h4>
+        <div class="article-recent-post-summary-text">
+          <ul>
+              <li *ngFor="let post of lastPosts"><a routerLink="/blog/{{post.id}}">{{post.title}}</a></li>
+          </ul>   
+        </div>
+      </div>
+
+      <div class="article-recommend-side">
+        <h4>Recommend</h4>
+        <ul>
+          <li><a href="">Books</a></li>
+          <li><a href="">Review</a></li>
+          <li><a href="">SF</a></li>
+          <li><a href="">Stories</a></li>
+        </ul>
+      </div>
+    </aside>
+
+    <div class="page-center-side">
+        <div *ngIf="posts.length" class="post-list">
+
+            <article *ngFor="let post of posts">
+                <div class="article-title">
+                  <h2><a routerLink="/blog/{{post.id}}">{{post.title}}</a></h2>
+                </div>
+        
+                <div class="article-divider">
+                  <img src="../../../assets/img/custom_divider_4.png" width="100%">
+                </div>
+
+                <app-post-admin [post]="post" (notify)="onDeleteNotify($event)"></app-post-admin>
+        
+                <div class="article-comments-count">
+                  <h4>{{post.comments.length}} comments</h4>
+                </div>
+        
+                <div class="article-categories">
+                  <h4>Category: {{getCategoryById(post.categoryId)}}</h4>
+                </div>
+        
+                <div class="article-short-content">
+                  {{post.body}}
+                </div>
+        
+                <div class="article-read-more">
+                  <h3><a routerLink="/blog/{{post.id}}">Read article ...</a></h3>
+                </div>
+        
+                <hr>
+            </article>
+
+            <div class="pager">
+                <button class="load-more" [disabled]="pager.reachedEnd" [ngClass]="{'disabled': pager.reachedEnd}" (click)="loadMore()">
+                  <i class="fa fa-refresh" [class.fa-refresh-animate]="pager.isLoading"></i>
+                  <span *ngIf="!pager.isLoading">Load more...</span>
+                  <span *ngIf="pager.isLoading">Loading more...</span>
+                </button>
+                <!-- <span *ngIf="pager.reachedEnd" class="reached-in">
+              
+                </span> -->
+              </div>
+        
+              </div>
+        </div>
+</main>
+

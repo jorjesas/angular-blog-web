@@ -1,0 +1,159 @@
+.blog-title {
+    margin-bottom: 20px;
+}
+
+.page-main{
+	display: flex;
+	flex-direction: row;
+	width: 100%;
+    padding-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.page-left-side{
+	width: 20%;
+}
+
+.page-left-side ul{
+    padding: 0px;
+}
+
+.page-left-side li {
+    list-style-type: none;
+}
+
+.page-left-side h4{
+	color: deepskyblue;
+	margin-bottom: 0px;
+}
+
+.page-center-side{
+	width: 80%;
+
+}
+
+.page-right-side{
+	width: 20%;
+}
+
+.article{
+	text-align: center;
+}
+
+.article-title h2{
+	margin-bottom: 0px;
+}
+
+.article-divider{
+	position: relative;
+	margin-top: -15px;
+	padding: 0 10%;
+	z-index: -1;
+}
+
+.article-comments-count h4{
+	margin-bottom: 0px;
+	font-size: 16px;
+}
+
+.article-categories h4{
+	margin-top: 0px;
+	font-size: 18px;
+}
+
+.article-short-content{
+	font: 14px 'Short Stack', Georgia; 
+	padding: 4% 7%;
+	text-indent: 10%;
+	text-align: justify;
+	text-justify: inter-word;
+}
+
+.article-read-more h3 {
+	font-size: 18px;
+}
+
+.article-search{
+	padding-top: 20%;
+}
+
+.article-search-form {
+    text-align: center;
+}
+
+.article-categories-side {
+    padding-bottom: 20px;
+}
+
+.load-more {
+    background-color: transparent;
+    display: inline-block;
+    text-align: center;
+    padding: 8px 15px;
+    cursor: pointer;
+    color: deepskyblue;
+    border: 2px solid deepskyblue;
+}
+
+.load-more.disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+input[type="radio"] {
+    display:none;
+}
+
+input[type="radio"] + label {
+    color:deepskyblue;
+    font-family:Arial, sans-serif;
+    margin-bottom: 0px;
+}
+
+input[type="radio"] + label span {
+    display:inline-block;
+    width:19px;
+    height:19px;
+    margin:-2px 10px 0 0;
+    vertical-align:middle;
+    background:url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/210284/check_radio_sheet.png) -38px top no-repeat;
+    cursor:pointer;
+}
+
+input[type="radio"]:checked + label span {
+    background:url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/210284/check_radio_sheet.png) -57px top no-repeat;
+}
+
+.rb-container {
+    text-align: left;
+    padding-left: 30%;
+}
+
+/*
+    Original version: http://www.bootply.com/128062
+    
+    This version adds support for IE 10+ and Firefox.
+*/
+
+.fa-refresh-animate {
+    -animation: spin .7s infinite linear;
+    -ms-animation: spin .7s infinite linear;
+    -webkit-animation: spinw .7s infinite linear;
+    -moz-animation: spinm .7s infinite linear;
+}
+
+@keyframes spin {
+    from { transform: scale(1) rotate(0deg);}
+    to { transform: scale(1) rotate(360deg);}
+}
+  
+@-webkit-keyframes spinw {
+    from { -webkit-transform: rotate(0deg);}
+    to { -webkit-transform: rotate(360deg);}
+}
+
+@-moz-keyframes spinm {
+    from { -moz-transform: rotate(0deg);}
+    to { -moz-transform: rotate(360deg);}
+}

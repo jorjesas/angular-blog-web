@@ -1,0 +1,40 @@
+<header class="page-header">
+  <div class="page-main-header">
+    <div class="header-title">
+      <h1>Hello{{user == null? "" : " " + user.firstName }}!</h1>
+    </div>
+  </div>
+
+  <div class="header-menubar">
+      <ul>
+          <li>
+            <a routerLink="/home" routerLinkActive="active">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li>
+            <a routerLink="/blog">Blog</a>
+          </li>
+          <li class="header-account-dropdown dropdown">
+              <button class="button-account-dropdown dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  My account
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                  <a  *ngIf="this.isLoggedIn" class="dropdown-item" routerLink="/user/my-account">My profile ({{user.firstName}})</a>
+                  <a  *ngIf="!this.isLoggedIn" class="dropdown-item" routerLink="/user/login">Log In</a>
+                  <a  *ngIf="this.isLoggedIn" class="dropdown-item" (click)="logout()">Log Out</a>
+                  <a  *ngIf="!this.isLoggedIn" class="dropdown-item" routerLink="/user/register">Register</a>
+                  <a *ngIf="this.isLoggedIn" class="dropdown-item" routerLink="/blog-add">Create blog post</a>
+                </div>
+          </li>
+      </ul>
+      <hr>
+  </div>
+</header>
+
+<div class="container middle-container">
+  <router-outlet></router-outlet>
+</div>
+
+<footer class="page-footer">
+  <p>©George Sas, 2017.</p>
+</footer>
+
